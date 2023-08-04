@@ -1,0 +1,140 @@
+
+@font-face {
+    font-family: 'Karla-Regular';
+    font-weight: 400;
+    src: url('./assets/fonts/Karla-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Karla-bold';
+    font-weight: 700;
+    src: url('./assets/fonts/Karla-Bold.ttf') format('truetype');
+}
+
+:root {
+    --darkGreen: #2AB3B1;
+    --yellow: #C0DF33;
+    --lightGreen: #6bbcbb;
+    --darkGrey: #9AA7BE;
+    --lightGrey: #E6EFF5;
+    --white: #FFF;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+    font-family: 'Karla-Bold', Arial, sans-serif;
+}
+
+.price-grid__text {
+    font-family: 'Karla-Regular', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: var(--darkGrey);
+    line-height: 26px;
+    letter-spacing: -0.175px;
+}
+
+.price-grid__list  {
+    font-family: 'Karla-Regular', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
+.price-grid__heading--large {
+    font-size: 2rem;
+    letter-spacing: -0.25px;
+    color: var(--darkGreen);
+    margin-bottom: 24px;
+}
+
+.price-grid__heading--medium {
+    font-size: 1.8rem;
+    letter-spacing: -0.225px;
+    color: var(--white);
+}
+
+.price-grid__heading--small {
+    font-family: 'Karla-Bold', Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 20px;
+    letter-spacing: -0.187px;
+    color: var(--yellow);
+    margin-bottom: 11px;
+}
+
+.wrapper {
+    padding: 72px 32px;
+    background-color: var(--lightGrey);
+    min-height: 100%;
+}
+
+.price-grid__container {
+    background-color: var(--white);
+    min-height: 475px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px 0 rgba(0, 81, 171, 0.15);
+    overflow: hidden;
+}
+
+.price-grid__container > * {
+    padding: 24px;
+}
+
+.price-grid__button {
+    background-color: var(--yellow);
+    font-family: 'Karla-Bold', Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.10);
+    width: 100%;
+    padding: 15px;
+
+}
+
+.price-grid__subscription {
+    background-color: var(--darkGreen);
+}
+
+.price-grid__about {
+    background-color: var(--lightGreen);
+}
+
