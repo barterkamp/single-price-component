@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
   <title>Single Price Grid Component | coded by Bart Erkamp</title>
@@ -18,8 +18,11 @@
       </header>
       <div class="price-grid__subscription">
         <h2 class="price-grid__heading--medium">Monthly Subscription</h2>
-        &dollar;29 per month
-        Full access for less than &dollar;1 a day
+        <div class="price-grid__billing">
+          <p class="price-grid__billing-price">&dollar;29</p>
+          <p class="price-grid__billing-cycle">per month</p>
+        </div>
+        <p class="price-grid__subscription-text">Full access for less than &dollar;1 a day</p>
         <button class="price-grid__button" role="button">Sign Up</button>
       </div>
       <div class="price-grid__about">
