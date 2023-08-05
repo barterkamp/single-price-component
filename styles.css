@@ -11,6 +11,8 @@
     src: url('./assets/fonts/Karla-Bold.ttf') format('truetype');
 }
 
+/* colors */
+
 :root {
     --darkGreen: #2AB3B1;
     --yellow: #C0DF33;
@@ -19,6 +21,8 @@
     --lightGrey: #E6EFF5;
     --white: #FFF;
 }
+
+/* CSS reset */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -50,8 +54,14 @@ input, button {
     font: inherit;
 }
 
+/* typography */
+
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
+}
+
+p {
+    font-family: 'Karla-Regular', Arial, sans-serif;
 }
 
 h1, h2, h3 {
@@ -59,17 +69,32 @@ h1, h2, h3 {
 }
 
 .price-grid__text {
-    font-family: 'Karla-Regular', Arial, sans-serif;
     font-size: 1.4rem;
     color: var(--darkGrey);
     line-height: 26px;
     letter-spacing: -0.175px;
 }
 
-.price-grid__list  {
-    font-family: 'Karla-Regular', Arial, sans-serif;
-    font-size: 1.4rem;
+.price-grid__subscription-text {
+    font-size: 1.6rem;
     color: var(--white);
+    letter-spacing: -0.2px;
+    margin-bottom: 24px;
+}
+
+.price-grid__heading--small {
+    font-size: 1.5rem;
+    line-height: 20px;
+    letter-spacing: -0.187px;
+    color: var(--yellow);
+    margin-bottom: 11px;
+}
+
+.price-grid__heading--medium {
+    font-size: 1.8rem;
+    letter-spacing: -0.225px;
+    color: var(--white);
+    margin-bottom: 18px;
 }
 
 .price-grid__heading--large {
@@ -79,45 +104,12 @@ h1, h2, h3 {
     margin-bottom: 24px;
 }
 
-.price-grid__heading--medium {
-    font-size: 1.8rem;
-    letter-spacing: -0.225px;
-    color: var(--white);
-}
-
-.price-grid__heading--small {
-    font-family: 'Karla-Bold', Arial, sans-serif;
-    font-size: 1.5rem;
-    line-height: 20px;
-    letter-spacing: -0.187px;
-    color: var(--yellow);
-    margin-bottom: 11px;
-}
-
-.wrapper {
-    padding: 72px 32px;
-    background-color: var(--lightGrey);
-    min-height: 100%;
-}
-
-.price-grid__container {
-    background-color: var(--white);
-    min-height: 475px;
-    border-radius: 8px;
-    box-shadow: 0 15px 30px 0 rgba(0, 81, 171, 0.15);
-    overflow: hidden;
-}
-
-.price-grid__container > * {
-    padding: 24px;
-}
+/* button styling */
 
 .price-grid__button {
     background-color: var(--yellow);
     font-family: 'Karla-Bold', Arial, sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
+    font-size: 1.6rem;
     line-height: normal;
     letter-spacing: -0.2px;
     text-align: center;
@@ -127,14 +119,108 @@ h1, h2, h3 {
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.10);
     width: 100%;
     padding: 15px;
+}
 
+/* list styling */
+
+.price-grid__list  {
+    list-style: none;
+    font-family: 'Karla-Regular', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: rgba(250, 250, 250, 0.5);
+    line-height: 20px;
+    letter-spacing: -0.175px;
+    margin:0;
+    padding:0;
+}
+
+/* wrapper centers the component on the screen */
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 72px 32px;
+    background-color: var(--lightGrey);
+    min-height: 100%;
+}
+
+.price-grid__container {
+    background-color: var(--white);
+    max-width: 635px;
+    min-height: 475px;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px 0 rgba(0, 81, 171, 0.15);
+    overflow: hidden;
+}
+
+/* equal padding on all grid-container children */
+
+.price-grid__container > * {
+    padding: 24px;
 }
 
 .price-grid__subscription {
     background-color: var(--darkGreen);
 }
 
+.price-grid__billing {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-grid__billing-price {
+    font-family: 'Karla-Bold', Arial, sans-serif;
+    font-size: 3.2rem;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.price-grid__billing-cycle {
+    font-size: 1.6rem;
+    color: rgba(250, 250, 250, 0.5);
+    line-height: 26px;
+    letter-spacing: -0.2px;
+}
+
 .price-grid__about {
     background-color: var(--lightGreen);
 }
 
+/* media queries */
+
+@media (min-width: 550px) {
+    .price-grid__heading--large {
+        font-size: 2.4rem;
+    }
+    .price-grid__heading--small {
+        font-size: 1.8rem;
+    }
+    .price-grid__text {
+        font-size: 1.6rem;
+    }
+    .price-grid__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 215px 1fr;
+        grid-template-areas:
+        'header header'
+        'subscription about';
+        border-radius: 8px;
+    }
+    .price-grid__container > * {
+        padding: 40px;
+    }
+    .price-grid__header {
+        grid-area: header;
+    }
+    .price-grid__subscription {
+        grid-area: subscription;
+    }
+    .price-grid__about {
+        grid-area: about;
+    }
+}
